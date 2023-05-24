@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_future_builder/api/users_api.dart';
 import 'package:flutter_future_builder/model/user.dart';
+import 'package:flutter_future_builder/page/user_page.dart';
 
 
 class UserLocalPage extends StatelessWidget {
@@ -35,6 +36,9 @@ class UserLocalPage extends StatelessWidget {
       final user = users[index];
 
       return ListTile(
+        onTap: () => Navigator.of(context).push(MaterialPageRoute(
+          builder: (BuildContext context) => UserPage(user: user),  
+        )),
         leading: CircleAvatar(
           backgroundImage: NetworkImage(user.urlAvatar),
         ),
