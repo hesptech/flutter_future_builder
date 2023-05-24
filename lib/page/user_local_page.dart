@@ -9,7 +9,8 @@ class UserLocalPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Scaffold(
     body: FutureBuilder<List<User>>(
-      future: UsersApi.getUsersLocally(context),
+      //future: UsersApi.getUsersLocally(context),
+      future: UsersApi.getUsers(context),
       builder: (context, snapshot) {
         final users = snapshot.data;
 
