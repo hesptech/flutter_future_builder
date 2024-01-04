@@ -4,14 +4,14 @@ import 'package:flutter_future_builder/model/user.dart';
 import 'package:flutter_future_builder/page/user_page.dart';
 
 
-class UserLocalPage extends StatelessWidget {
-  const UserLocalPage({super.key});
+class UserNetworkPage extends StatelessWidget {
+  const UserNetworkPage({super.key});
 
   @override
   Widget build(BuildContext context) => Scaffold(
     body: FutureBuilder<List<User>>(
-      future: UsersApi.getUsersLocally(context),
-      //future: UsersApi.getUsers(context),
+      //future: UsersApi.getUsersLocally(context),
+      future: UsersApi.getUsers(context),
       builder: (context, snapshot) {
         final users = snapshot.data;
 
