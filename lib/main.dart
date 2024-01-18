@@ -1,9 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
 import 'package:flutter_future_builder/page/user_local_page.dart';
 import 'package:flutter_future_builder/page/user_network_page.dart';
+import 'package:flutter_future_builder/page/catfact_ninja.dart';
 
 void main() {
-  runApp(const MyApp());
+
+  runApp(
+    const ProviderScope(
+      child: MyApp()
+    ) 
+  );
+
+  //runApp(const MyApp());
+
 }
 
 class MyApp extends StatelessWidget {
@@ -55,6 +66,10 @@ class MainPageState extends State<MainPage> {
               icon: Text('FutureBuilder'),
               label: 'Network',
             ),
+            BottomNavigationBarItem(
+              icon: Text('FutureProvider'),
+              label: 'Network',
+            ),
           ],
           onTap: (int index) => setState(() => this.index = index),
         ),
@@ -67,6 +82,8 @@ class MainPageState extends State<MainPage> {
         return const UserLocalPage();
       case 1:
         return const UserNetworkPage();
+      case 2:
+        return const CatfactNinja();
       default:
         return Container();
     }
