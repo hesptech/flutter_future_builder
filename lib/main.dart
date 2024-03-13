@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_future_builder/page/home_page.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:flutter_future_builder/page/user_local_page.dart';
@@ -12,9 +13,7 @@ void main() {
       child: MyApp()
     ) 
   );
-
   //runApp(const MyApp());
-
 }
 
 class MyApp extends StatelessWidget {
@@ -55,19 +54,25 @@ class MainPageState extends State<MainPage> {
           title: Text(widget.title),
         ),
         bottomNavigationBar: BottomNavigationBar(
+          showUnselectedLabels: true,
+          unselectedItemColor: Colors.black.withOpacity(0.38),
           currentIndex: index,
           selectedItemColor: Colors.teal,
           items: const [
             BottomNavigationBarItem(
-              icon: Text('FutureBuilder'),
+              icon: Text('Home', style: TextStyle(fontSize: 12)),
+              label: '',
+            ),
+            BottomNavigationBarItem(
+              icon: Text('FutureBuilder', style: TextStyle(fontSize: 12)),
               label: 'Local',
             ),
             BottomNavigationBarItem(
-              icon: Text('FutureBuilder'),
+              icon: Text('FutureBuilder', style: TextStyle(fontSize: 12)),
               label: 'Network',
             ),
             BottomNavigationBarItem(
-              icon: Text('FutureProvider'),
+              icon: Text('FutureProvider', style: TextStyle(fontSize: 12)),
               label: 'Network',
             ),
           ],
@@ -79,10 +84,12 @@ class MainPageState extends State<MainPage> {
   Widget buildPages() {
     switch (index) {
       case 0:
-        return const UserLocalPage();
+        return const HomePage();
       case 1:
-        return const UserNetworkPage();
+        return const UserLocalPage();
       case 2:
+        return const UserNetworkPage();
+      case 3:
         return const CatfactNinja();
       default:
         return Container();

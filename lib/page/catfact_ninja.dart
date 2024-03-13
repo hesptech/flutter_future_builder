@@ -15,7 +15,10 @@ class CatfactNinja extends ConsumerWidget {
       body: Center(
         child: catfact.when(
           data: (data) {
-          return Text(data);
+          return Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(data),
+          );
           }, 
           error: ( error, _ ) {
             return const Text('Error getting data');
