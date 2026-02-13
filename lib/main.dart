@@ -55,7 +55,7 @@ class MainPageState extends State<MainPage> {
         ),
         bottomNavigationBar: BottomNavigationBar(
           showUnselectedLabels: true,
-          unselectedItemColor: Colors.black.withOpacity(0.38),
+          unselectedItemColor: Colors.black.withValues(alpha: 0.38),
           currentIndex: index,
           selectedItemColor: Colors.teal,
           items: const [

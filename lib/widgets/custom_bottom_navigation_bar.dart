@@ -42,7 +42,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
   Widget build(BuildContext context) {
     return BottomNavigationBar(
           showUnselectedLabels: true,
-          unselectedItemColor: Colors.black.withOpacity(0.38),
+          unselectedItemColor: Colors.black.withValues(alpha: 0.38),
           currentIndex: _selectedIndex,
           selectedItemColor: Colors.teal,
           items: const [
