@@ -7,3 +7,8 @@ https://medium.com/@antonio.tioypedro1234/flutter-riverpod-the-essential-guide-f
 
 
 https://www.youtube.com/watch?v=BaNeWbKqhIQ
+
+
+--------------------------------------------------
+Deprecated imperative apply of Flutter's Gradle plugins
+https://docs.flutter.dev/release/breaking-changes/flutter-gradle-plugin-apply
